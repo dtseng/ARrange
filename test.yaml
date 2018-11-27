@@ -3,11 +3,11 @@ classes:
 
   - .person:
     - padding: 0.001, 0.001, 0.001, 0.001
-    - facing: .item # @table
+    - facing: .item 
     - binding: $Sittable
 
   - .item:
-    - padding: 0.001, 0.001, 0.001, 0.001 #lrtb
+    - padding: 0.001, 0.001, 0.001, 0.001 
     - direction: <1, 0>
     - binding: $Table
 

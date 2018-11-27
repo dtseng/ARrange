@@ -151,20 +151,7 @@
   <div class="section" id="welcome-to-arrange-s-documentation">
 <h1>Welcome to ARrange’s documentation!<a class="headerlink" href="#welcome-to-arrange-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>The config file is the main location where you can specify your preferences for your layout preferences. Objects in the layout are separated into classes – for exampe, “person” and “item.” To designate constraints for each type of object, your config file will look similar to the following:</p>
-<dl class="docutils">
-<dt>classes:</dt>
-<dd><ul class="first last simple">
-<li>.person:
-- padding: 0.001, 0.001, 0.001, 0.001
-- facing: .item # &#64;table
-- binding: $Sittable</li>
-<li>.item:
-- padding: 0.001, 0.001, 0.001, 0.001
-- direction: &lt;1, 0&gt;
-- binding: $Table</li>
-</ul>
-</dd>
-</dl>
+<a class="reference internal image-reference" href="_images/image.png"><img alt="_images/image.png" class="align-center" src="_images/image.png" style="width: 417.59999999999997px; height: 278.4px;" /></a>
 <p>Note that a period (“.”) before a word designates the word as a reference to a class name. (E.g., “.person” and “.item” in the example above). The list underneath each class name is a list of constraints that will be applied to each class of objects.</p>
 <p>Below is a list of possible constraints you can use for now:</p>
 </div>

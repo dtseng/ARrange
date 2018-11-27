@@ -8,16 +8,10 @@ Welcome to ARrange's documentation!
 
 The config file is the main location where you can specify your preferences for your layout preferences. Objects in the layout are separated into classes -- for exampe, "person" and "item." To designate constraints for each type of object, your config file will look similar to the following:
 
-classes:
-  - .person:
-    - padding: 0.001, 0.001, 0.001, 0.001
-    - facing: .item # @table
-    - binding: $Sittable
+.. image:: image.png
+    :scale: 60%
+    :align: center
 
-  - .item:
-    - padding: 0.001, 0.001, 0.001, 0.001 
-    - direction: <1, 0>
-    - binding: $Table
 
 Note that a period (".") before a word designates the word as a reference to a class name. (E.g., ".person" and ".item" in the example above). The list underneath each class name is a list of constraints that will be applied to each class of objects.
 
