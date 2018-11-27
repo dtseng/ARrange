@@ -150,33 +150,22 @@
             
   <div class="section" id="welcome-to-arrange-s-documentation">
 <h1>Welcome to ARrange’s documentation!<a class="headerlink" href="#welcome-to-arrange-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>The config file is the main location where you can specify your preferences for your layout preferences. Objects in the layout are separated into classes – for exampe, “person” and “item.” To designate constraints for each type of object, your config file will look similar to the following:</p>
-<a class="reference internal image-reference" href="_images/image.png"><img alt="_images/image.png" class="align-center" src="_images/image.png" style="width: 417.59999999999997px; height: 278.4px;" /></a>
-<p>Note that a period (“.”) before a word designates the word as a reference to a class name. (E.g., “.person” and “.item” in the example above). The list underneath each class name is a list of constraints that will be applied to each class of objects.</p>
-<p>Below is a list of possible constraints you can use for now:</p>
+<a class="reference internal image-reference" href="_images/image.png"><img alt="_images/image.png" class="align-center" src="_images/image.png" style="width: 426.0px; height: 258.0px;" /></a>
+<p>The config file is the main location where you can specify your preferences for your layout preferences. Objects in the layout are separated into classes – for example, in the config file above, “classA” and “classB.” The surfaces in the environment are separated into types, such as “typeA” and “typeB” in the config file above. For this task, we have two types of classes: “person” and “item,” and two types of surfaces: “Sittable” and “Placeable.”</p>
+<p>Note that a period (“.”) before a word designates the word as a reference to a class name, and a dollar sign (“$”) designates the word as a surface type. The list underneath each class name is a list of constraints that will be applied to each class of objects.</p>
+<p>Below is a list of possible constraints you can use for this task. Not all of the constraints have to be used:</p>
 </div>
 <div class="section" id="constraints">
 <h1>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt><em>padding</em>: left, right, top, bottom (in meters)</dt>
-<dd>Example: padding: 0.001, 0.001, 0.001, 0.001
-Amount of padding you want on each side of the object’s bounding box.</dd>
-<dt><em>binding</em>: surface</dt>
-<dd><dl class="first last docutils">
-<dt>Binds the object to the given type of surface. For example, if you would like the person class to only be placed on top “Sittable” surfaces, then you would add the following constraint to .person:</dt>
-<dd>binding: $Sittable</dd>
-</dl>
-</dd>
-<dt><em>direction</em>: &lt;x, y&gt;</dt>
-<dd>Example: direction: &lt;1, 0&gt;
-Restricts object to face this direction.</dd>
-<dt><em>facing</em>: .class_name</dt>
-<dd><dl class="first last docutils">
-<dt>Makes the object face another object of a given class name. For example, to make a person face an object of the item class, you would add the following constraint to .person:</dt>
-<dd>facing: .item</dd>
-</dl>
-</dd>
-</dl>
+<p><strong>padding (left, right, top, bottom)</strong>:
+Amount of padding (in meters) you want on each side of the object’s bounding box. Example: padding: 0.001, 0.001, 0.001, 0.001</p>
+<p><strong>binding($SurfaceType)</strong>:
+Binds the object to the given type of surface. For example, to request for the optimizer to only place objects of classA onto surfaces of typeA, then you would add the following constraint to .classA: “binding: $typeA”</p>
+<p><strong>direction(&lt;x, y&gt;)</strong>:
+Restricts object to face the direction &lt;x, y&gt;. Example: “direction: &lt;1, 0&gt;”</p>
+<p><strong>facing(.class_name)</strong>:
+Makes the object face another object of a given class name. For example, to make all objects of classA face objects in classB, you would add the following constraint to .classA:
+“facing: .classB”</p>
 </div>
 
 
