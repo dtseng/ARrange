@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to ARrange’s documentation! &mdash; ARrange 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> ARrange
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to ARrange’s documentation!</a></li>
+<li><a class="reference internal" href="#constraints">Constraints</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ARrange</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to ARrange’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-arrange-s-documentation">
+<h1>Welcome to ARrange’s documentation!<a class="headerlink" href="#welcome-to-arrange-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The config file is the main location where you can specify your preferences for your layout preferences. Objects in the layout are separated into classes – for exampe, “person” and “item.” To designate constraints for each type of object, your config file will look similar to the following:</p>
+<dl class="docutils">
+<dt>classes:</dt>
+<dd><ul class="first last simple">
+<li>.person:
+- padding: 0.001, 0.001, 0.001, 0.001
+- facing: .item # &#64;table
+- binding: $Sittable</li>
+<li>.item:
+- padding: 0.001, 0.001, 0.001, 0.001
+- direction: &lt;1, 0&gt;
+- binding: $Table</li>
+</ul>
+</dd>
+</dl>
+<p>Note that a period (“.”) before a word designates the word as a reference to a class name. (E.g., “.person” and “.item” in the example above). The list underneath each class name is a list of constraints that will be applied to each class of objects.</p>
+<p>Below is a list of possible constraints you can use for now:</p>
+</div>
+<div class="section" id="constraints">
+<h1>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt><em>padding</em>: left, right, top, bottom (in meters)</dt>
+<dd>Example: padding: 0.001, 0.001, 0.001, 0.001
+Amount of padding you want on each side of the object’s bounding box.</dd>
+<dt><em>binding</em>: surface</dt>
+<dd><dl class="first last docutils">
+<dt>Binds the object to the given type of surface. For example, if you would like the person class to only be placed on top “Sittable” surfaces, then you would add the following constraint to .person:</dt>
+<dd>binding: $Sittable</dd>
+</dl>
+</dd>
+<dt><em>direction</em>: &lt;x, y&gt;</dt>
+<dd>Example: direction: &lt;1, 0&gt;
+Restricts object to face this direction.</dd>
+<dt><em>facing</em>: .class_name</dt>
+<dd><dl class="first last docutils">
+<dt>Makes the object face another object of a given class name. For example, to make a person face an object of the item class, you would add the following constraint to .person:</dt>
+<dd>facing: .item</dd>
+</dl>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Hammad Bashir, Kunal Chaudhary, Kavi Mehta, Emily Pedersen, David Tseng
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
