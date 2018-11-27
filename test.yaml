@@ -1,0 +1,70 @@
+#Constraints
+classes:
+
+  - .person:
+    - padding: 0.001, 0.001, 0.001, 0.001
+    - facing: .item # @table
+    - binding: $Sittable
+
+  - .item:
+    - padding: 0.001, 0.001, 0.001, 0.001 #lrtb
+    - direction: <1, 0>
+    - binding: $Table
+
+#circle? angle constraint
+#constraint generation?
+#layout contigencies?
+#padding? lr tb fb
+#resizing under padding?
+#distance to another class, ranges?
+
+#how to map composable constraints these into code
+#implementing all these constraints
+
+#ideas:
+  #center in plane?
+  #face but "human facing???"
+  #padding as a percentage?
+  #hierarchy of fallbacks, scene doesn't have that semantic attribute
+  #scaling?
+
+
+#Constraints
+# classes:
+
+#   - .test1:
+#     - padding: 0.1, 0.5, 0.1, 0.1
+#     - facing: .test2 # @table
+#     - binding: $couch
+
+#   - .test2:
+#     - padding: 0.1, 0.1, 0.1, 0.1 #lrtb
+#     - direction: <1, 0>
+
+#keep things together (statues on surface)
+
+# #Constraints
+# classes:
+
+#   - .place_on_couch:
+#     - color: black
+#     - semantic-affinity: couch
+#     - facing: .person
+
+#   - .person:
+#     - scale_rel: 0.5 - 1.2
+#     - padding: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
+#     - distance:
+#       - .couch : 0.75m - 1m
+#   - .chair
+
+# #Constraints
+# classes:
+
+#   - .test1:
+#     - padding: 0.1, 0.5, 0.1, 0.1
+#     - facing: .test2 # @table
+
+#   - .test2:
+#     - padding: 0.1, 0.1, 0.1, 0.1 #lrtb
+#     - direction: <0, 1>
